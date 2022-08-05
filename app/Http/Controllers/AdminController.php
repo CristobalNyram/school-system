@@ -33,6 +33,25 @@ class AdminController extends Controller
         ];
         return view('admin.report_excel')->with($variables);
     }
+    public function registration_users()
+    {
+      
+         $variables = [
+            'menu'=>"registration_users",        
+        ];
+        return view('admin.registration_users')->with($variables);
+    }
+
+    public function news()
+    {
+      
+         $variables = [
+            'menu'=>"news",        
+        ];
+        return view('admin.news')->with($variables);
+    }
+
+
 
     public function export_report_excel(Request $request) 
     {

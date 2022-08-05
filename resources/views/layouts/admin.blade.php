@@ -63,17 +63,29 @@
                         <i class="ti-dashboard"></i><span> Dashboard</span>
                     </a>                
                 </li>
-                <li class="nav-level">--- Reportes</li>
+                <li class="nav-level">--- Usuarios</li>
                 <li class="treeview @if($menu === 'report_excel') active @endif">
                     <a class="waves-effect waves-dark" href="{{ route('report_excel')}}">
-                        <i class="ti-import"></i><span> Exportar Excel</span>
+                        <i class="ti-user"></i><span>Perfiles</span>
                     </a>                
                 </li>
+
+                <li class="nav-level">--- Administración</li>
                 <li class="treeview @if($menu === 'report_online') active @endif">
                     <a class="waves-effect waves-dark" href="{{ route('buscar_alumno')}}">
-                        <i class="ti-book"></i><span> Buscar Alumno</span>
+                        <i class="ti-money"></i><span>Pagos</span>
                     </a>                
                 </li>
+                <li class="treeview @if($menu === 'registration_users') active @endif">
+                  <a class="waves-effect waves-dark" href="{{ route('registration_users')}}">
+                      <i class="ti-layout-menu-v"></i><span>Registros</span>
+                  </a>                
+              </li>
+              <li class="treeview @if($menu === 'news') active @endif">
+               <a class="waves-effect waves-dark" href="{{ route('news')}}">
+                   <i class="ti-id-badge"></i><span>Noticias</span>
+               </a>                
+           </li>
             </ul>
          </section>
       </aside>
