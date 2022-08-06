@@ -14,16 +14,16 @@ class UserSeeder extends Seeder
     public function run()
     {
         DB::table('users')->insert([
-            'name' => "Miguel Angel Vera Ramos",
-            'user' => "miguelangel",
-            'email' => "miguelavramos21@gmail.com",
-            'password' => bcrypt('ti.vera.ramos')
+            'name' => "Cristobal",
+            'first_surname' => "Marin",
+            'second_surname' => "Santos",
+            'gender' => "M",
+            'type_user'=>'1',
+            'estatus'=>'2',
+            'user' => "cris",
+            'email' => "marrinmarrin@gmail.com",
+            'password' => bcrypt('123456')
         ]);
-        DB::table('users')->insert([
-            'name' => "Victor Manuel",
-            'user' => "victor",
-            'email' => "victor@uttecam.edu.mx",
-            'password' => bcrypt('ti.12345')
-        ]);
+       
     }
 }
