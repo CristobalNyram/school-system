@@ -19,7 +19,7 @@ class UserSeeder extends Seeder
             'second_surname' => "Santos",
             'gender' => "M",
             'type_user'=>'1',
-            'estatus'=>'2',
+            'status'=>'2',
             'user' => "cris",
             'email' => "marrinmarrin@gmail.com",
             'password' => bcrypt('123456')

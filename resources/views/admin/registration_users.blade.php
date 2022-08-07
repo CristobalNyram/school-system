@@ -6,8 +6,9 @@
             <div class="container-fluid">
                 <div class="row">
                 <div class="main-header">
-                    <h4>Registro de usuarios 
-                        <i class="ti-user"></i>
+                    <h4>
+                        <i class="ti-user"></i>Usuarios 
+                        
                     </h4>
                 </div>
                 </div>

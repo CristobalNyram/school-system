@@ -8,10 +8,21 @@ https://mycolor.space/?hex=%231D3DE8&sub=1
     border-bottom: 0.3em solid;
     border-top: none;
 }
-
+.button-custom
+{ 
+    background-color: #1D3DE8;
+    color: white;
+}
 h4 {
     color: #1D3DE8;
 }
+
+h2 {
+    color: #1D3DE8;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
 
 .settings-menu li {
     padding: 7px 20px;

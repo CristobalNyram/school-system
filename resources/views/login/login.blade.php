@@ -15,9 +15,9 @@
 				<div class="login-card card-block">
 					<form class="md-float-material" name="user" action="{{ route('login') }}" method="POST">
 						@csrf
-						<h3 class="text-center text-uppercase">
+						<h2 class="text-center text-uppercase">
 							Ingreso al personal de la institución
-						</h3>
+						</h2>
 						@error('user')
 							<div class="alert alert-danger">{{ $message }}</div>
 						@enderror
@@ -37,7 +37,7 @@
 						</div>
 						<div class="row">
 							<div class="col-xs-10 offset-xs-1">
-								<button type="submit" class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20">INGRESAR</button>
+								<button type="submit" class="btn button-custom btn-md btn-block waves-effect text-center m-b-20">INGRESAR</button>
 							</div>
 						</div>
 					</form>
