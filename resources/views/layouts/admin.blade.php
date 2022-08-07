@@ -72,7 +72,7 @@
 
                 <li class="nav-level">--- Administración</li>
                 <li class="treeview @if($menu === 'report_online') active @endif">
-                    <a class="waves-effect waves-dark" href="{{ route('buscar_alumno')}}">
+                    <a class="waves-effect waves-dark" >
                         <i class="ti-money"></i><span>Pagos</span>
                     </a>                
                 </li>
@@ -82,7 +82,7 @@
                   </a>                
               </li>
               <li class="treeview @if($menu === 'news') active @endif">
-               <a class="waves-effect waves-dark" href="{{ route('news')}}">
+               <a class="waves-effect waves-dark" href="{{ route('news_index')}}">
                    <i class="ti-id-badge"></i><span>Noticias</span>
                </a>                
            </li>

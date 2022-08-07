@@ -1,59 +1,28 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Carrera;
-use App\Models\Alumno;
-use Illuminate\Http\Request;
-use Maatwebsite\Excel\Facades\Excel;
-use App\Exports\EncuestaExport;
-use App\Exports\HistoryAlumno;
-use Illuminate\Support\Facades\DB;
 
-class AdminController extends Controller
+use App\Models\News;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
+class NewsController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function dashboard()
+    public function index()
     {
+        $news =News::latest()->where('status','2')->get();
+
         $variables = [
-            'menu'=>"dashboard"
-        ];
-        return view('admin.dashboard')->with($variables);
-    }
-
-    public function report_excel()
-    {
-        $carreras = Carrera::all();
-         $variables = [
-            'menu'=>"report_excel",
-            'carreras'=> $carreras
-        ];
-        return view('admin.report_excel')->with($variables);
-    }
-    public function registration_users()
-    {
-      
-         $variables = [
-            'menu'=>"registration_users",        
-        ];
-        return view('admin.registration_users')->with($variables);
-    }
-
-    public function news()
-    {
-      
-         $variables = [
-            'menu'=>"news",        
+            'menu'=>"news",
+            'news'=> $news,    
         ];
         return view('news.index')->with($variables);
     }
-
-
-
- 
 
     /**
      * Show the form for creating a new resource.
@@ -62,8 +31,12 @@ class AdminController extends Controller
      */
     public function create()
     {
-        //
-    }
+
+        $variables = [
+            'menu'=>"news",        
+        ];
+        return view('news.create')->with($variables);
+    }   
 
     /**
      * Store a newly created resource in storage.
@@ -73,16 +46,33 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        $new= new News();
+        $new->title=$request->title;
+        $new->content=$request->content;
+        $new->image_url='prueba';
+        $new->status='2';
+        $new->user_id=Auth::id();
+      
+        if($new->save()===true)
+        {
+          return back()->with('success','Se ha agregado exitosamente la noticia.');
+           
+        }
+        else
+        {
+        
+        return back()->withErrors('No se pudo agregar la noticia.');
+        }
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\News  $news
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(News $news)
     {
         //
     }
@@ -90,10 +80,10 @@ class AdminController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\News  $news
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(News $news)
     {
         //
     }
@@ -102,10 +92,10 @@ class AdminController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\News  $news
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, News $news)
     {
         //
     }
@@ -113,10 +103,10 @@ class AdminController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\News  $news
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(News $news)
     {
         //
     }
