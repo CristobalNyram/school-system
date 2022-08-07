@@ -30,6 +30,7 @@ Route::prefix('admin')->group(function () {
     Route::get('/news', [NewsController::class,"index"])->middleware('auth')->name('news_index');
     Route::get('/news/create', [NewsController::class,"create"])->middleware('auth')->name('news_create');
     Route::post('/news/store', [NewsController::class,"store"])->middleware('auth')->name('news_store');
+    Route::delete('/news/destroy/{new}', [ProductsController::class,"destroy"])->middleware('auth')->name('news_delete');
 
 
     ///login y logout

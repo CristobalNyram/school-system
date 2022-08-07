@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\News;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -48,9 +49,12 @@ class NewsController extends Controller
     {
         
         $new= new News();
+        $name_image = $request->file('image_url')->getClientOriginalName();
+        $date_image= Carbon::now()->timestamp;
+        $request->file('image_url')->store('public/images/');
+        $new->image_url=$date_image.$name_image;
         $new->title=$request->title;
-        $new->content=$request->content;
-        $new->image_url='prueba';
+        $new->content=$request->content;     
         $new->status='2';
         $new->user_id=Auth::id();
       
@@ -83,9 +87,9 @@ class NewsController extends Controller
      * @param  \App\Models\News  $news
      * @return \Illuminate\Http\Response
      */
-    public function edit(News $news)
+    public function edit(News $new)
     {
-        //
+       
     }
 
     /**

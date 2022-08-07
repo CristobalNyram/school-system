@@ -22,7 +22,7 @@
                     @if(session('ERROR'))
                     <div class="alert alert-danger">{{ session('ERROR') }}</div>
                     @endif
-                    <form action="{{ route('news_store')}}" method="POST">
+                    <form action="{{ route('news_store')}}" method="POST" enctype="multipart/form-data">
                         @csrf
                             <div class="form-group col-lg-3">
                                 <label for="titele" class="form-control-label">Titulo</label>
@@ -46,7 +46,7 @@
                             </div>
                             <div class="form-group col-lg-4">
                                 <label for="dia" class="form-control-label">Imagen</label>
-                                <input type="file" class="form-control" name="image_url" id="image_url" required>
+                                <input type="file" class="form-control" name="image_url" id="image_url" accept="image/x-png,image/gif,image/jpeg"  required>
                             </div>
                             
                    

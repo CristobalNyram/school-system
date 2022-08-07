@@ -52,18 +52,18 @@
                                         <td>{{$new->user_id}}</td>
 
                                         <td  class="d-flex">
-                                            {{-- <form action="{{route('recipes_delete',$recipe)}}" method="POST">
+                                            <form action="{{route('news_delete',$new)}}" method="POST">
             
-                                                <!-- Con esto internamente le indicamos que tipo de ruta es -->
                                                 @method('DELETE')
                                                     @csrf
                                                     <input type="submit" 
                                                     class="btn btn-danger" 
                                                     value="Eliminar" 
-                                                    onclick="return confirm('¿Desea eliminar esta receta?')" >
-                                            </form> --}}
+                                                    onclick="return confirm('¿Desea eliminar esta noticia?')" >
+                                            </form> 
                                          
-                                            <button type="submit" id="Buscar"  class="btn btn-info">Editar</button>
+                                            <button type="submit" id="Buscar"  class="btn btn-warning">Editar</button>
+                                            <button type="submit" id="Buscar"  class="btn btn-info">Ver</button>
         
                                         </td>
                                       
